@@ -1,6 +1,12 @@
 package com.kapparhopi.skelestarter.config;
 
+
+import com.kapparhopi.skelestarter.backend.service.EmailService;
+import com.kapparhopi.skelestarter.backend.service.MockEmailService;
+
+
 import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +17,7 @@ import javax.servlet.annotation.WebServlet;
 
 @Configuration
 @Profile("dev")
-@PropertySource("file:///${user.home}/.devopsbuddy/application-dev.properties")
+@PropertySource("application-dev.properties")
 public class DevelopmentConfig {
 
     @Value("${stripe.test.private.key}")

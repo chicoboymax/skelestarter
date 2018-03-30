@@ -1,6 +1,7 @@
 package com.kapparhopi.skelestarter.web.controllers;
 
-import com.kapparhopi.skelestarter.web.domain.frontend.Feedback;
+import com.kapparhopi.skelestarter.backend.service.EmailService;
+import com.kapparhopi.skelestarter.web.domain.frontend.FeedbackPojo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,13 +25,13 @@ public class ContactController {
 
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contactGet(ModelMap model) {
-        Feedback feedback = new Feedback();
+        FeedbackPojo feedback = new FeedbackPojo();
         model.addAttribute(ContactController.FEEDBACK_MODEL_KEY, feedback);
         return ContactController.CONTACT_US_VIEW_NAME;
     }
 
     @RequestMapping(value = "/contact", method = RequestMethod.POST)
-    public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) Feedback feedback) {
+    public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) FeedbackPojo feedback) {
         log.debug("Feedback POJO content: {}", feedback);
         emailService.sendFeedbackEmail(feedback);
         return ContactController.CONTACT_US_VIEW_NAME;

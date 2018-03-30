@@ -31,13 +31,13 @@
         </encoder>
     </appender>
 
-    <logger name="com.kapparhopi.skelestarter" level="debug" />
+    <logger name="com.kapparhopi" level="debug" />
     <logger name="uk.co.jemos.podam" level="warn" />
     <logger name="org.springframework" level="info" />
     <logger name="org.hibernate" level="warn" />
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="warn" />
     <logger name="org.springframework.web" level="info" />
-    <logger name="org.springframework.security" level="warn" />
+    <logger name="org.springframework.security" level="info" />
 
     <root level="warn">
         <appender-ref ref="CONSOLE" />

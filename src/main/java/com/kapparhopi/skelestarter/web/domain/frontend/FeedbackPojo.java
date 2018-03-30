@@ -1,6 +1,5 @@
 package com.kapparhopi.skelestarter.web.domain.frontend;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +9,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class Feedback implements Serializable {
+public class FeedbackPojo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
