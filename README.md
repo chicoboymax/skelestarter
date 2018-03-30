@@ -1,1 +1,1 @@
-"# skelestarter" 
+Spring boot skeleton app.
