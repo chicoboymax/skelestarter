@@ -6,9 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Slf4j
@@ -23,14 +21,14 @@ public class ContactController {
     @Autowired
     private EmailService emailService;
 
-    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    @GetMapping("/contact")
     public String contactGet(ModelMap model) {
         FeedbackPojo feedback = new FeedbackPojo();
         model.addAttribute(ContactController.FEEDBACK_MODEL_KEY, feedback);
         return ContactController.CONTACT_US_VIEW_NAME;
     }
 
-    @RequestMapping(value = "/contact", method = RequestMethod.POST)
+    @PostMapping("/contact")
     public String contactPost(@ModelAttribute(FEEDBACK_MODEL_KEY) FeedbackPojo feedback) {
         log.debug("Feedback POJO content: {}", feedback);
         emailService.sendFeedbackEmail(feedback);
