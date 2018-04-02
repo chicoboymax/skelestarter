@@ -1,7 +1,8 @@
 package com.kapparhopi.skelestarter.web.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 /**
  * @author mdrouin
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/")
+    private static final String INDEX_VIEW_NAME = "index";
+
+    @GetMapping("/")
     public String home() {
-        return "index";
+        return INDEX_VIEW_NAME;
     }
 }

@@ -1,13 +1,15 @@
 package com.kapparhopi.skelestarter.web.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CopyController {
 
-    @RequestMapping("/about")
+    private static final String ABOUT_VIEW_NAME = "copy/about";
+
+    @GetMapping("/about")
     public String about() {
-        return "copy/about";
+        return CopyController.ABOUT_VIEW_NAME;
     }
 }
