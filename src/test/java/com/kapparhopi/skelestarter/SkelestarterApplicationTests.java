@@ -17,7 +17,7 @@ public class SkelestarterApplicationTests {
     private I18NService i18NService;
 
     @Test
-    public void testMessageByLocaleService() throws Exception {
+    public void testMessageByLocaleService() {
         String expectedResult = "Skelestarter";
         String messageId = "index.main.callout";
         String actual = i18NService.getMessage(messageId);
