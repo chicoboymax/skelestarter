@@ -1,6 +1,6 @@
 package com.kapparhopi.skelestarter;
 
-import com.kapparhopi.skelestarter.web.i18n.I18NService;
+import com.kapparhopi.skelestarter.backend.service.I18NService;
 
 import org.junit.Assert;
 import org.junit.Test;

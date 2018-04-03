@@ -1,4 +1,4 @@
-package com.kapparhopi.skelestarter.web.i18n;
+package com.kapparhopi.skelestarter.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

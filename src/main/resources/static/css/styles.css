@@ -3,8 +3,8 @@ body {
 
     /* Courtesy of uigradients.com */
     background: #085078; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #085078, #85D8CE); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #085078, #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #085078 , #85D8CE); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #085078 , #85D8CE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -24,11 +24,9 @@ body {
 .marketing .span4 {
     text-align: center;
 }
-
 .marketing h2 {
     font-weight: normal;
 }
-
 .marketing .span4 p {
     margin-left: 10px;
     margin-right: 10px;
@@ -44,12 +42,10 @@ body {
 .featurette-divider {
     margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
-
 .featurette {
     padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
     overflow: hidden; /* Vertically center images part 2: clear their floats. */
 }
-
 .featurette-image {
     margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
 }
@@ -58,7 +54,6 @@ body {
 .featurette-image.pull-left {
     margin-right: 40px;
 }
-
 .featurette-image.pull-right {
     margin-left: 40px;
 }
@@ -76,5 +71,5 @@ body {
  *-------------------------------------------------------/
  /** Registration page */
 .fieldError {
-    border: 2px solid red;
+    border : 2px solid red;
 }
