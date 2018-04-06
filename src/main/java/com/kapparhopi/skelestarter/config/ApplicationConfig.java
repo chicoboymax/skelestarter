@@ -25,8 +25,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "com.kapparhopi.skelestarter.backend.persistence.repositories")
 @EntityScan(basePackages = "com.kapparhopi.skelestarter.backend.persistence.domain.backend")
 @EnableTransactionManagement
-@PropertySource("application-common.properties")
-@PropertySource("stripe.properties")
+@PropertySource("classpath:application-common.properties")
+@PropertySource("classpath:stripe.properties")
 public class ApplicationConfig {
 
     @Value("${aws.s3.profile}")

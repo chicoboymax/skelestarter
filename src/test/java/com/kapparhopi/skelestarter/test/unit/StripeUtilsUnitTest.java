@@ -5,6 +5,9 @@ import com.kapparhopi.skelestarter.utils.StripeUtils;
 import com.kapparhopi.skelestarter.web.domain.frontend.ProAccountPayload;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.Clock;
 import java.time.LocalDate;
@@ -17,6 +20,9 @@ import static org.hamcrest.core.Is.is;
  * @author mdrouin
  * @since 2018-04-03
  */
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class StripeUtilsUnitTest {
 
     @Test

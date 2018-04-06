@@ -12,6 +12,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 import java.util.Set;
@@ -21,6 +24,9 @@ import java.util.UUID;
  * @author mdrouin
  * @since 2018-04-03
  */
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class UserRepositoryIntegrationTest extends AbstractIntegrationTest {
 
     @Rule public TestName testName = new TestName();
@@ -54,7 +60,7 @@ public class UserRepositoryIntegrationTest extends AbstractIntegrationTest {
     public void createNewUser() throws Exception {
 
         String username = testName.getMethodName();
-        String email = testName.getMethodName() + "@devopsbuddy.com";
+        String email = testName.getMethodName() + "@skelestarter.com";
 
         User basicUser = createUser(username, email);
 

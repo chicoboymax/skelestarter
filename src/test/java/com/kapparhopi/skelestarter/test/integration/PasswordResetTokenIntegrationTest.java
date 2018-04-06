@@ -9,8 +9,11 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
@@ -25,6 +28,9 @@ import java.util.stream.Collectors;
  * @author mdrouin
  * @since 2018-04-03
  */
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class PasswordResetTokenIntegrationTest extends AbstractIntegrationTest {
 
     @Rule public TestName testName = new TestName();

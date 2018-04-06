@@ -8,7 +8,10 @@ import com.kapparhopi.skelestarter.web.domain.frontend.BasicAccountPayload;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -19,6 +22,9 @@ import java.util.UUID;
  * @author mdrouin
  * @since 2018-04-03
  */
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class UserUtilsUnitTest {
 
     private MockHttpServletRequest mockHttpServletRequest;

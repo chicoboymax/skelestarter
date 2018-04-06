@@ -18,7 +18,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @Profile("dev")
-@PropertySource("application-dev.properties")
+@PropertySource("classpath:application-dev.properties")
 public class DevelopmentConfig {
 
     @Value("${stripe.test.private.key}")
