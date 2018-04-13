@@ -36,7 +36,7 @@
                 <p class="lead">Please fill in the form to subscribe to DevOps Buddy!</p>
 
                 <form id="signupForm" th:action="@{/signup}"
-                      th:object="${__${T(com.devopsbuddy.web.controllers.SignupController).PAYLOAD_MODEL_KEY_NAME}__}"
+                      th:object="${__${T(com.kapparhopi.skelestarter.web.controllers.SignupController).PAYLOAD_MODEL_KEY_NAME}__}"
                       method="post" class="text-left" enctype="multipart/form-data">
 
                     <!-- Hidden field for the POST request -->
@@ -133,7 +133,7 @@
                     </div>
 
                     <!-- Additional HTML form fields for Pro Account subscription -->
-                    <div th:if="${#httpServletRequest.getParameter('planId') == #strings.toString(T(com.devopsbuddy.enums.PlansEnum).PRO.getId())}">
+                    <div th:if="${#httpServletRequest.getParameter('planId') == #strings.toString(T(com.kapparhopi.skelestarter.enums.PlansEnum).PRO.getId())}">
                         <div class="form-group">
                             <label for="cardNumber" th:text="#{signup.form.credit.card.number}"></label>
                             <input type="text" id="cardNumber" th:field="*{cardNumber}" class="form-control"/>

@@ -5,6 +5,7 @@ import com.kapparhopi.skelestarter.backend.persistence.domain.backend.User;
 import com.kapparhopi.skelestarter.backend.persistence.repositories.PasswordResetTokenRepository;
 import com.kapparhopi.skelestarter.backend.persistence.repositories.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ import java.util.UUID;
  */
 
 @Service
+@Slf4j
 @Transactional(readOnly = true)
 public class PasswordResetTokenService {
 
@@ -34,8 +36,6 @@ public class PasswordResetTokenService {
     @Value("${token.expiration.length.minutes}")
     private int tokenExpirationInMinutes;
 
-    /** The application logger */
-    private static final Logger LOG = LoggerFactory.getLogger(PasswordResetTokenService.class);
 
     /**
      * Creates a new Password Reset Token for the user identified by the given email.
@@ -55,9 +55,9 @@ public class PasswordResetTokenService {
             passwordResetToken = new PasswordResetToken(token, user, now, tokenExpirationInMinutes);
 
             passwordResetToken = passwordResetTokenRepository.save(passwordResetToken);
-            LOG.debug("Successfully created token {}  for user {}", token, user.getUsername());
+            log.debug("Successfully created token {}  for user {}", token, user.getUsername());
         } else {
-            LOG.warn("We couldn't find a user for the given email {}", email);
+            log.warn("We couldn't find a user for the given email {}", email);
         }
 
         return passwordResetToken;

@@ -2,6 +2,7 @@ package com.kapparhopi.skelestarter.backend.persistence.domain.backend;
 
 import com.kapparhopi.skelestarter.backend.persistence.converters.LocalDateTimeAttributeConverter;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,7 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @Getter
 @Setter
+@Slf4j
 public class PasswordResetToken {
 
     /**
@@ -40,7 +42,6 @@ public class PasswordResetToken {
     /**
      * The application logger
      */
-    private static final Logger LOG = LoggerFactory.getLogger(PasswordResetToken.class);
 
     private final static int DEFAULT_TOKEN_LENGTH_IN_MINUTES = 120;
 
@@ -74,7 +75,7 @@ public class PasswordResetToken {
             throw new IllegalArgumentException("token, user and creation date time can't be null");
         }
         if (expirationInMinutes == 0) {
-            LOG.warn("The token expiration length in minutes is zero. Assigning the default value {} ", DEFAULT_TOKEN_LENGTH_IN_MINUTES);
+            log.warn("The token expiration length in minutes is zero. Assigning the default value {} ", DEFAULT_TOKEN_LENGTH_IN_MINUTES);
             expirationInMinutes = DEFAULT_TOKEN_LENGTH_IN_MINUTES;
         }
         this.token = token;

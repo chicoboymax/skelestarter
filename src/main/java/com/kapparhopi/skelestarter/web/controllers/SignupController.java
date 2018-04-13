@@ -26,11 +26,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -80,7 +76,7 @@ public class SignupController {
     @Autowired
     private StripeService stripeService;
 
-    @GetMapping(value = SIGNUP_URL_MAPPING)
+    @RequestMapping(SIGNUP_URL_MAPPING)
     public String signupGet(@RequestParam("planId") int planId, ModelMap model) {
 
         if (planId != PlansEnum.BASIC.getId() && planId != PlansEnum.PRO.getId()) {

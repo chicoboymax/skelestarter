@@ -56,6 +56,7 @@ public class SkelestarterApplication implements CommandLineRunner {
         userRoles.add(new UserRole(user, new Role(RolesEnum.ADMIN)));
         log.debug("Creating user with username {}", user.getUsername());
         userService.createUser(user, PlansEnum.PRO, userRoles);
+
         log.info("User {} created", user.getUsername());
     }
 }

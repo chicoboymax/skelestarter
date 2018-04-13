@@ -1,6 +1,5 @@
 package com.kapparhopi.skelestarter.web.domain.frontend;
 
-import org.hibernate.validator.constraints.Email;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +7,7 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 /**
